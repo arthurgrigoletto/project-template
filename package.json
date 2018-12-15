@@ -1,0 +1,24 @@
+{
+  "name": "project-template",
+  "version": "1.0.0",
+  "description": "Template para projetos em node com webpack, editorconfig, e outras configurações",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurgrigoletto/project-template.git"
+  },
+  "keywords": [
+    "node",
+    "webpack",
+    "es2015"
+  ],
+  "author": "Arthur Grigoletto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arthurgrigoletto/project-template/issues"
+  },
+  "homepage": "https://github.com/arthurgrigoletto/project-template#readme"
+}
