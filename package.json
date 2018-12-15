@@ -4,7 +4,8 @@
   "description": "Template para projetos em node com webpack, editorconfig, e outras configurações",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/arthurgrigoletto/project-template/issues"
   },
-  "homepage": "https://github.com/arthurgrigoletto/project-template#readme"
+  "homepage": "https://github.com/arthurgrigoletto/project-template#readme",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.2.1"
+  }
 }
