@@ -4,10 +4,25 @@
   "description": "Template para projetos em node com webpack, editorconfig, e outras configurações",
   "main": "server.js",
   "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
-    "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint"
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -25,11 +40,18 @@
   },
   "homepage": "https://github.com/arthurgrigoletto/project-template#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
     "eslint": "^5.10.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.2.1",
-    "nodemon": "^1.18.9"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

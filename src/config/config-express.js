@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const multipartyParser = require('connect-multiparty');
-const passport = require('passport');
+// const passport = require('passport');
 
 // ROUTES
 
@@ -17,10 +17,12 @@ module.exports = () => {
   app.use(multipartyParser());
 
   // PASSPORT MIDDLEWARE
-  app.use(passport.initialize());
+  // app.use(passport.initialize());
 
   // PASSPORT CONFIG
-  require('./passport')(passport);
+  /* eslint-disable global-require */
+  // require('./passport')(passport);
+  /* eslint-disable global-require */
 
   // USE ROUTES
 
